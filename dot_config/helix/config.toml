@@ -1,0 +1,14 @@
+theme = "horizon-dark"
+
+
+[editor]
+line-number = "relative"
+# preview-completion-insert = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.lsp]
+display-inlay-hints = true
