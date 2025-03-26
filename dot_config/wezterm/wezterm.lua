@@ -3,11 +3,22 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.local
 config = wezterm.config_builder()
 
- 
+
 -- This is where you actually apply your config choices
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
-config.default_prog = { 'C:\\ProgramData\\chocolatey\\bin\\nu.exe' }
+
+-- because I don't know the path for nu on linux yet lmao
+local out = '/bin/bash'
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    out = 'C:\\ProgramData\\chocolatey\\bin\\nu.exe'
+elseif wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'aarch64-apple-darwin' then
+    out = '/opt/homebrew/bin/nu'
+end
+
+config.default_prog = { out }
+
 
 -- and finally, return the configuration to wezterm
 
