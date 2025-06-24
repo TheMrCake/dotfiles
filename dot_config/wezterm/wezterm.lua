@@ -70,5 +70,15 @@ config.keys = {
         mods = "LEADER",
         action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
     },
+    {
+        key = 'P',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.DisableDefaultAssignment
+    },
+    {
+        key = 'P',
+        mods = 'ALT',
+        action = act.ActivateCommandPalette
+    },
 }
 return config
