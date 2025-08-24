@@ -1,0 +1,6 @@
+{{ if ne .chezmoi.os "windows" }}
+	AppData/Roaming/helix/config.toml
+{{ end }}
+{{ else }}
+	.config/helix/config.toml
+{{ end }}

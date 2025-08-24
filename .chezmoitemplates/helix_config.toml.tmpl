@@ -1,0 +1,41 @@
+theme = "horizon-dark"
+
+[editor]
+line-number = "relative"
+# preview-completion-insert = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[keys.normal]
+C-y = ":clipboard-yank"
+C-p = ":clipboard-paste-after"
+C-P = ":clipboard-paste-before"
+
+{{ if eq .chezmoi.os "windows" -}}
+# WINDOWS-specific keybinds for C-y
+C-e = [
+  # Note: Backslashes in file paths within TOML strings might need to be escaped
+  # depending on how Helix parses them. `C:\\unique-file` is safer.
+  ":sh del C:\\unique-file",
+  ":insert-output yazi.exe %{buffer_name} --chooser-file=C:\\unique-file",
+  ":open %sh{type C:\\unique-file}",
+  ":redraw",
+]
+{{ else -}}
+# UNIX-specific keybinds for C-y (for Linux/macOS)
+C-e = [
+  ":sh rm -f /tmp/unique-file",
+  # Note: Backslashes in shell commands within TOML strings need to be escaped.
+  # \x1b becomes \\x1b for TOML string literal
+  ":insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file",
+  ":insert-output echo \"\\x1b[?1049h\\x1b[?2004h\" > /dev/tty",
+  ":open %sh{cat /tmp/unique-file}",
+  ":redraw",
+]
+{{ end -}}
