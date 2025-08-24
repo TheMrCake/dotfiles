@@ -1,5 +1,5 @@
 [language-server.godot]
-command = "telnet"
+command = "ncat"
 args = ["127.0.0.1", "6005"]
 
 # gdformat via pip install gdtoolkit
