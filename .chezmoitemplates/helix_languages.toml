@@ -7,4 +7,4 @@ args = ["STDIO", "TCP:127.0.0.1:6005"]
 name = "gdscript"
 language-servers = ["godot"]
 formatter = { command = "gdformat", args = ["-"] }
-auto-format = true[201~]
+auto-format = true
