@@ -1,0 +1,10 @@
+[language-server.godot]
+command = "telnet"
+args = ["STDIO", "TCP:127.0.0.1:6005"]
+
+# gdformat via pip install gdtoolkit
+[[language]]
+name = "gdscript"
+language-servers = ["godot"]
+formatter = { command = "gdformat", args = ["-"] }
+auto-format = true[201~]
