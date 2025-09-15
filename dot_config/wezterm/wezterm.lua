@@ -12,7 +12,7 @@ config = wezterm.config_builder()
 local out = '/bin/bash'
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    out = 'C:\\ProgramData\\chocolatey\\bin\\nu.exe'
+    out = 'C:\\Users\\anton\\AppData\\Local\\Programs\\nu\\bin\\nu.exe'
 elseif wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'aarch64-apple-darwin' then
     out = '/opt/homebrew/bin/nu'
 end
