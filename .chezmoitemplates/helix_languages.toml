@@ -8,3 +8,18 @@ name = "gdscript"
 language-servers = ["godot"]
 formatter = { command = "gdformat", args = ["-"] }
 auto-format = true
+
+
+[language-server.cmake-language-server]
+command = "cmake-language-server"
+args = ["--log-level=info"]
+
+[[language]]
+name = "cmake"
+auto-format = true
+language-servers = [ "cmake-language-server" ]
+
+
+[language-server.clangd]
+command = "clangd"
+args = ["--compile-commands-dir=build"]
