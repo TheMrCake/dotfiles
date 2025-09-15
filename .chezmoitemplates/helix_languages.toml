@@ -2,7 +2,7 @@
 command = "ncat"
 args = ["127.0.0.1", "6005"]
 
-# gdformat via pip install gdtoolkit
+# GDSCRIPT
 [[language]]
 name = "gdscript"
 language-servers = ["godot"]
@@ -10,6 +10,17 @@ formatter = { command = "gdformat", args = ["-"] }
 auto-format = true
 
 
+# PYTHON
+[language-server.pyrefly]
+command = "pyrefly"
+args = [ "lsp" ]
+
+[[language]]
+name = "python"
+language-servers = [ "pyrefly" ]
+
+
+# CMAKE
 [language-server.cmake-language-server]
 command = "cmake-language-server"
 
@@ -19,6 +30,8 @@ auto-format = true
 language-servers = [ "cmake-language-server" ]
 
 
+# C++
 [language-server.clangd]
 command = "clangd"
 args = ["--compile-commands-dir=build"]
+
