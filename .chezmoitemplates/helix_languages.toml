@@ -12,7 +12,6 @@ auto-format = true
 
 [language-server.cmake-language-server]
 command = "cmake-language-server"
-args = ["--log-level=info"]
 
 [[language]]
 name = "cmake"
