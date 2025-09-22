@@ -35,3 +35,9 @@ language-servers = [ "cmake-language-server" ]
 command = "clangd"
 args = ["--compile-commands-dir=build"]
 
+[[language]]
+name = "cpp"
+roots = ["CMakelists.txt"]
+language-servers = ["clangd"]
+file-types = ["cpp", "h", "hpp"]
+
