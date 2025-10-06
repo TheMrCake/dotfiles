@@ -43,6 +43,10 @@ file-types = ["cpp", "h", "hpp"]
 
 
 # SQL
+[language-server.sql-language-server]
+command = "sql-language-server"
+args = ["up", "--method", "stdio"]
+
 [[language]]
 name = "sql"
 scope = "source.sql"
@@ -50,6 +54,11 @@ language-servers = ["sql-language-server"]
 file-types = ["sql"]
 
 
-[language-server.sql-language-server]
-command = "sql-language-server"
-args = ["up", "--method", "stdio"]
+# Jinja
+[language-server.jinja-lsp]
+command = "jinja-lsp"
+config = { templates = "./templates", backend = ["./src"], lang = "rust"}timeout = 5
+
+[[language]]
+name = "jinja"
+language-servers = ["jinja-lsp"]
