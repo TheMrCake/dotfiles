@@ -59,7 +59,8 @@ file-types = ["sql"]
 # Jinja
 [language-server.jinja-lsp]
 command = "jinja-lsp"
-config = { templates = "./templates", backend = ["./src"], lang = "rust"}timeout = 5
+config = { templates = "./templates", backend = ["./src"], lang = "rust"}
+timeout = 5
 
 [[language]]
 name = "jinja"
