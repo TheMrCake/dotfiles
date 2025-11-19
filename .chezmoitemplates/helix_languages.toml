@@ -28,6 +28,7 @@ command = "cmake-language-server"
 name = "cmake"
 auto-format = true
 language-servers = [ "cmake-language-server" ]
+indent = { tab-width = 2, unit = "  " }
 
 
 # C++
@@ -40,6 +41,7 @@ name = "cpp"
 roots = ["CMakelists.txt"]
 language-servers = ["clangd"]
 file-types = ["cpp", "h", "hpp"]
+indent = { tab-width = 2, unit = "  " }
 
 
 # SQL
