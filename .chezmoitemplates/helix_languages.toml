@@ -40,8 +40,8 @@ args = ["--compile-commands-dir=build"]
 name = "cpp"
 roots = ["CMakelists.txt"]
 language-servers = ["clangd"]
-file-types = ["cpp", "h", "hpp"]
-indent = { tab-width = 2, unit = "  " }
+file-types = ["c", "cpp", "h", "hpp"]
+indent = { tab-width = 4, unit = "  " }
 
 
 # SQL
