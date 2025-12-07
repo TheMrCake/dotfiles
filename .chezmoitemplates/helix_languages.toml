@@ -41,7 +41,7 @@ name = "cpp"
 roots = ["CMakelists.txt"]
 language-servers = ["clangd"]
 file-types = ["c", "cpp", "h", "hpp"]
-indent = { tab-width = 4, unit = "  " }
+indent = { tab-width = 4, unit = "    " }
 
 
 # SQL
