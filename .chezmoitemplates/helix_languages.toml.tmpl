@@ -65,3 +65,17 @@ timeout = 5
 [[language]]
 name = "jinja"
 language-servers = ["jinja-lsp"]
+
+
+# Lua
+[language-server.lua-language-server]
+{{- if eq .chezmoi.os "windows" -}}
+command = "C:\\Users\\anton\\AppData\\Local\\Microsoft\\WinGet\\Packages\\LuaLS.lua-language-server_Microsoft.Winget.Source_8wekyb3d8bbwe\\bin\\lua-language-server.exe"
+{{- else -}}
+command = "lua-language-server"
+{{- end -}}
+timeout = 5
+
+[[language]]
+name = "lua"
+language-servers = ["lua-language-server"]
